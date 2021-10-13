@@ -9,6 +9,10 @@ describe '#greet_programmer' do
   
 end
 
+def greet_programmer
+  puts "Hello, programmer!"
+end
+
 describe '#greet' do
 
   it 'outputs a string "Hello, Naureen!" when called with "Naureen"' do
@@ -20,6 +24,11 @@ describe '#greet' do
   end
 
 end
+
+def greet(name)
+  puts "Hello, #{name}!"
+end
+
 
 describe '#greet_with_default' do
 
@@ -33,12 +42,20 @@ describe '#greet_with_default' do
 
 end
 
+def greet_with_default(name = "programmer")
+  puts "Hello, #{name}!"
+end
+
 describe '#add' do
 
   it 'returns the sum of two numbers' do
     expect(add(2, 5)).to be(7)
   end
 
+end
+
+def add(x, y)
+  x + y
 end
 
 describe '#halve' do
@@ -51,4 +68,12 @@ describe '#halve' do
     expect(halve("six")).to be(nil)
   end
 
+end
+
+def halve(x)
+  if x.class != Integer
+    return nil
+  else
+  x / 2
+  end
 end
